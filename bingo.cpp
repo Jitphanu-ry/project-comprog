@@ -26,6 +26,24 @@ int main(){
     setscorefalse(dataS);
     randbingo(dataP);
     show_table(player_peper);
+    //ผู้เล่นเลือกกระดาษ
+    string ans;
+    do{
+    cout << "do you want to pick another table?  [1]yes [2]no" << endl;
+    cin >> ans;
+    if(ans == "yes"){
+        randbingo(dataP);
+        show_table(player_peper);
+    }else if(ans == "yes"){
+        break;
+    }else{
+        do{
+            cout << "please input 1/2 (yes/no)" << endl;
+            cin >> ans;
+        }while (ans != "yes" && ans != "no");
+    }
+    }while(ans != "no");
+    //เริ่มเกมจนกว่าผู้เล่นจะปิงโกลได้แต้มอย่างน้อย 1
     do{
     randnum(setnum,count);
     check(player_peper,score,setnum,count);
